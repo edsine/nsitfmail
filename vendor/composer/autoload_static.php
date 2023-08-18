@@ -49,8 +49,8 @@ class ComposerStaticInit5da537f3fc523dc692a083c219621f01
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -94,8 +94,8 @@ class ComposerStaticInit5da537f3fc523dc692a083c219621f01
         array (
             'Net' => 
             array (
-                0 => __DIR__ . '/..' . '/pear/net_socket',
-                1 => __DIR__ . '/..' . '/pear/net_smtp',
+                0 => __DIR__ . '/..' . '/pear/net_smtp',
+                1 => __DIR__ . '/..' . '/pear/net_socket',
             ),
         ),
         'M' => 
@@ -109,8 +109,8 @@ class ComposerStaticInit5da537f3fc523dc692a083c219621f01
         array (
             'Console' => 
             array (
-                0 => __DIR__ . '/..' . '/pear/console_getopt',
-                1 => __DIR__ . '/..' . '/pear/console_commandline',
+                0 => __DIR__ . '/..' . '/pear/console_commandline',
+                1 => __DIR__ . '/..' . '/pear/console_getopt',
             ),
         ),
         'A' => 
