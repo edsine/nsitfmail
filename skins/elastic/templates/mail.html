@@ -26,31 +26,34 @@
 </div>
 
 <!-- messages list -->
-<div id="layout-list" class="listbox selected">
-	<div id="messagelist-header" class="header">
-		<a class="button icon task-menu-button" href="#menu"><span class="inner"><roundcube:label name="menu" /></span></a>
-		<a class="button icon back-sidebar-button folders" href="#sidebar"><span class="inner"><roundcube:label name="mailboxlist" /></span></a>
-		<span class="header-title"></span>
-		<div class="toolbar menu" role="toolbar">
-			<a href="#select" class="select disabled" data-popup="listselect-menu" data-toggle-button="list-toggle-button" title="<roundcube:label name="select" />"><span class="inner"><roundcube:label name="select" /></span></a>
-			<roundcube:if condition="env:threads" />
-				<a href="#threads" class="threads disabled" data-popup="threadselect-menu" title="<roundcube:label name="threads" />"><span class="inner"><roundcube:label name="threads" /></span></a>
-			<roundcube:endif />
-			<roundcube:object name="listmenulink" class="options active" label="options" innerclass="inner" />
-			<roundcube:container name="listcontrols" id="listcontrols" />
-		</div>
-		<roundcube:button command="checkmail" type="link" class="button icon toolbar-button refresh"
-			label="refresh" title="checkmail" innerclass="inner" />
-		<a class="button icon toolbar-menu-button" href="#list-menu"><span class="inner"><roundcube:label name="menu" /></span></a>
-	</div>
-	<roundcube:add_label name="showunread" />
-	<roundcube:object name="searchform" id="mailsearchform" wrapper="searchbar menu"
-		label="mailquicksearchbox" buttontitle="findmail" options="searchmenu" ariatag="h2" />
-	<div id="searchmenu" class="hidden searchoptions scroller propform formcontainer" aria-labelledby="aria-label-search-menu" aria-controls="messagelist">
-		<h3 id="aria-label-search-menu" class="voice"><roundcube:label name="searchmod" /></h3>
-		<div class="formcontent">
+
+
+
+
+<div id="layout-list" class="listbox selected" style="font-family: Verdana, sans-serif;">
+    <div id="messagelist-header" class="header" style="background-color: #D4D4D2; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);">
+        <a class="button icon task-menu-button" href="#menu"><span class="inner"><roundcube:label name="menu" /></span></a>
+        <a class="button icon back-sidebar-button folders" href="#sidebar"><span class="inner"><roundcube:label name="mailboxlist" /></span></a>
+        <span class="header-title"></span>
+        <div class="toolbar menu" role="toolbar">
+            <a href="#select" class="select disabled" data-popup="listselect-menu" data-toggle-button="list-toggle-button" title="<roundcube:label name='select' />" style="color: white;"><span class="inner"><roundcube:label name="select" /></span></a>
+            <roundcube:if condition="env:threads" />
+            <a href="#threads" class="threads disabled" data-popup="threadselect-menu" title="<roundcube:label name='threads' />" style="color: white;"><span class="inner"><roundcube:label name="threads" /></span></a>
+            <roundcube:endif />
+            <roundcube:object name="listmenulink" class="options active" label="options" innerclass="inner" />
+            <roundcube:container name="listcontrols" id="listcontrols" />
+        </div>
+        <roundcube:button command="checkmail" type="link" class="button icon toolbar-button refresh" label="refresh" title="checkmail" innerclass="inner" />
+        <a class="button icon toolbar-menu-button" href="#list-menu"><span class="inner"><roundcube:label name="menu" /></span></a>
+    </div>
+    <roundcube:add_label name="showunread" />
+    <roundcube:object name="searchform" id="mailsearchform" wrapper="searchbar menu" label="mailquicksearchbox" buttontitle="findmail" options="searchmenu" ariatag="h2" />
+    <div id="searchmenu" class="hidden searchoptions scroller propform formcontainer" aria-labelledby="aria-label-search-menu" aria-controls="messagelist" style="border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); background-color:#D4D4D2;">
+        <h3 id="aria-label-search-menu" class="voice"><roundcube:label name="searchmod" /></h3>
+        <div class="formcontent">
+
 			<ul class="proplist">
-				<li><label><input type="checkbox" name="s_mods[]" value="subject" /><roundcube:label name="subject" /></label></li>
+				<li><label><input type="checkbox" name="s_mods[]" class="btn-success" value="subject" /><roundcube:label name="subject" /></label></li>
 				<li class="with-sublist">
 					<label><input type="checkbox" name="s_mods[]" value="sender" /><roundcube:label name="sender" /></label>
 					<a class="button icon dropdown" role="button" href="#" title="<roundcube:label name="details" />"></a>
@@ -95,18 +98,24 @@
 				</select>
 			</div>
 		</div>
-		<div class="formbuttons">
-			<button type="button" class="btn btn-primary icon search" onclick="return rcmail.command('search')"><roundcube:label name="search" /></button>
-		</div>
+      
+
+
+        <div class="formbuttons">
+            <button type="button" class="btn btn-success icon search" onclick="return rcmail.command('search')" style="font-family: Verdana, sans-serif; font-size: 14px;"> <roundcube:label name="search" /> </button>
+        </div>
+    </div>
+	<div id="messagelist-content" class="scroller" tabindex="-1" style="background-color: #eaeaea; border-radius: 15px; padding: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); transition: background-color 0.3s, box-shadow 0.3s;">
+		<h2 id="aria-label-messagelist" class="voice" style="font-family: Verdana, sans-serif;"><roundcube:label name="arialabelmessagelist" /></h2>
+		<roundcube:object name="messages" id="messagelist" class="listing messagelist sortheader fixedheader" aria-labelledby="aria-label-messagelist" data-list="message_list" data-label-msg="listempty" />
+		<hr />
 	</div>
-	<div id="messagelist-content" class="scroller" tabindex="-1">
-		<h2 id="aria-label-messagelist" class="voice"><roundcube:label name="arialabelmessagelist" /></h2>
-		<roundcube:object name="messages" id="messagelist" class="listing messagelist sortheader fixedheader"
-			aria-labelledby="aria-label-messagelist" data-list="message_list" data-label-msg="listempty"
-		/>
-	</div>
-	<roundcube:include file="includes/pagenav.html" />
+	
+	
+	
+    <roundcube:include file="includes/pagenav.html" />
 </div>
+
 
 <!-- message preview -->
 <div id="layout-content">

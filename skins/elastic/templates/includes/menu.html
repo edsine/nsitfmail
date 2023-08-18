@@ -1,5 +1,23 @@
-<div id="layout-menu">
-	<h2 id="aria-label-tasknav" class="voice"><roundcube:label name="arialabeltasknav" /></h2>
+<style>
+	#taskmenu a.selected, #taskmenu a.selected:hover, #taskmenu a:hover {
+    color: #2c363a;
+    background: #f4f4f4;
+}
+#taskmenu a{
+    color: #309241;
+    background: 0 0;
+}
+#taskmenu .action-buttons a {
+    color: #309241;
+    background: 0 0;
+}
+.btn-link {
+    color: #309241;
+}
+</style>
+<div id="layout-menu" style="background-color: #f4f4f4;">
+	<div style="text-align: center;margin: auto;">
+		<a class="btn btn-secondary" href="http://127.0.0.1:8000/home">BACK</a></div>
 	<div class="popover-header">
 		<roundcube:object name="logo" src="/images/logo.svg" id="logo" alt="Logo" />
 		<a class="button icon cancel"><span class="inner"><roundcube:label name="close" /></span></a>
@@ -28,13 +46,13 @@
 		<roundcube:button command="settings" label="settings" type="link" innerClass="inner"
 			class="settings" classSel="settings selected" />
 		<span class="special-buttons">
-			<roundcube:if condition="config:dark_mode_support" />
+			<!-- <roundcube:if condition="config:dark_mode_support" />
 				<roundcube:add_label name="darkmode" />
 				<roundcube:add_label name="lightmode" />
 				<roundcube:button name="theme" label="darkmode" type="link" innerClass="inner" class="theme dark" />
 			<roundcube:endif />
 			<roundcube:button name="about" label="about" type="link"
-				class="about" innerClass="inner" onclick="UI.about_dialog(this)" />
+				class="about" innerClass="inner" onclick="UI.about_dialog(this)" /> -->
 			<roundcube:button command="logout" label="logout" type="link"
 				class="logout" innerClass="inner" />
 		</span>

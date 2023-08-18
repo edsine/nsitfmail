@@ -57,11 +57,9 @@ $config['smtp_host'] = 'ssl://ebs.nsitf.gov.ng:465';
 // SMTP username (if required) if you use %u as the username Roundcube
 // will use the current username for login
 // $config['smtp_user'] = '';
-
 // SMTP password (if required) if you use %p as the password Roundcube
 // will use the current user's password for login
 // $config['smtp_pass'] = '';
-
 // provide an URL where a user can get support for this Roundcube installation
 // PLEASE DO NOT LINK TO THE ROUNDCUBE.NET WEBSITE HERE!
 $config['support_url'] = '';
@@ -84,9 +82,26 @@ $config['des_key'] = 'glWoDIwopGIWZws86ptQ9K2j';
 // For example %n = mail.domain.tld, %t = domain.tld
 $config['username_domain'] = 'pglnigeria.com';
 
+// Name your service. This is displayed on the login screen and in the window title
+$config['product_name'] = 'NSITF';
+
 // ----------------------------------
 // PLUGINS
 // ----------------------------------
 // List of active plugins (in plugins/ directory)
 $config['plugins'] = [];
+
+// store draft message is this mailbox
+// leave blank if draft messages should not be stored
+// NOTE: Use folder names with namespace prefix (INBOX. on Courier-IMAP)
+$config['drafts_mbox'] = 'Your Drafts';
+
+// store spam messages in this mailbox
+// NOTE: Use folder names with namespace prefix (INBOX. on Courier-IMAP)
+$config['junk_mbox'] = 'Spams';
+
+// store sent message is this mailbox
+// leave blank if sent messages should not be stored
+// NOTE: Use folder names with namespace prefix (INBOX. on Courier-IMAP)
+$config['sent_mbox'] = 'Sent Mails';
 
