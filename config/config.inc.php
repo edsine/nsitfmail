@@ -34,7 +34,7 @@ $config['db_dsnw'] = 'mysql://root:@localhost/roundcubemail';
 // For example %n = mail.domain.tld, %t = domain.tld
 // WARNING: After hostname change update of mail_host column in users table is
 //          required to match old user data records with the new host.
-$config['imap_host'] = 'ssl://mail.nsitf.gov.ng:993';
+$config['imap_host'] = 'ssl://178-159-5-249.cprapid.com:993';
 
 // ----------------------------------
 // SMTP
@@ -52,7 +52,7 @@ $config['imap_host'] = 'ssl://mail.nsitf.gov.ng:993';
 // For example %n = mail.domain.tld, %t = domain.tld
 // To specify different SMTP servers for different IMAP hosts provide an array
 // of IMAP host (no prefix or port) and SMTP server e.g. ['imap.example.com' => 'smtp.example.net']
-$config['smtp_host'] = 'ssl://mail.nsitf.gov.ng:465';
+$config['smtp_host'] = 'ssl://178-159-5-249.cprapid.com:465';
 
 // SMTP username (if required) if you use %u as the username Roundcube
 // will use the current username for login
